@@ -6,7 +6,6 @@ npm i
 
 npm start
 npm run dev
-npm run build
 ```
 
 - This launcher comes from [CentralCorp](https://github.com/CentralCorp/CentralCorp-Launcher) 
