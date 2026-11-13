@@ -106,11 +106,11 @@ class Index {
                     identity: null,
                     target: [{
                         target: "dmg",
-                        arch: ["x64", "arm64"]
+                        arch: process.arch === "arm64" ? "arm64" : "x64"
                     },
                     {
                         target: "zip",
-                        arch: ["x64", "arm64"]
+                        arch: process.arch === "arm64" ? "arm64" : "x64"
                     }]
                 },
                 linux: {

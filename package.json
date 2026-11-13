@@ -1,10 +1,13 @@
 {
     "name": "SMP-Blois",
     "preductname": "SMP-Launcher",
-    "version": "1.0.0-2",
+    "version": "1.0.0-3",
     "description": "SMP Launcher modded server launcher",
     "main": "src/app.js",
-    "author": "TheFiery_/Riptiaz/Boulldogo/Vexato/Luuxis",
+    "author": {
+        "name": "TheFiery_/Riptiaz/Boulldogo/Vexato/Luuxis",
+        "email": "contact@smp-blois.fr"
+    },
     "env": "panel",
     "settings": "https://file.smp-blois.fr",
     "scripts": {
