@@ -76,7 +76,7 @@ class Index {
                 generateUpdatesFilesForAllChannels: false,
                 appId: "fr.smpblois.launcher",
                 productName: preductname,
-                copyright: 'Copyright © 2020-2025 Riptiaz',
+                copyright: 'Copyright © 2020-2026 TheFiery_',
                 artifactName: "${productName}-${os}-${arch}.${ext}",
                 extraMetadata: { main: 'app/app.js' },
                 files: ["app/**/*", "package.json", "LICENSE.md"],

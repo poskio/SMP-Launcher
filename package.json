@@ -1,7 +1,7 @@
 {
     "name": "SMP-Blois",
     "preductname": "SMP-Launcher",
-    "version": "1.0.0-1",
+    "version": "1.0.0-2",
     "description": "SMP Launcher modded server launcher",
     "main": "src/app.js",
     "author": "TheFiery_/Riptiaz/Boulldogo/Vexato/Luuxis",
