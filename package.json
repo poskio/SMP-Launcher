@@ -1,6 +1,6 @@
 {
     "name": "SMP-Blois",
-    "preductname": "SMP Launcher",
+    "preductname": "SMP-Launcher",
     "version": "1.0.0-1",
     "description": "SMP Launcher modded server launcher",
     "main": "src/app.js",

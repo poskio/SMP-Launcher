@@ -18,7 +18,11 @@ class Index {
     async init() {
         this.obf = true
         this.Fileslist = []
-        process.argv.forEach(async val => {
+        this.publishOption = process.argv.includes('--publish')
+            ? process.argv[process.argv.indexOf('--publish') + 1] || 'always'
+            : undefined;
+
+        for (const val of process.argv) {
             if (val.startsWith('--icon')) {
                 return this.iconSet(val.split('=')[1])
             }
@@ -32,7 +36,7 @@ class Index {
                 let buildType = val.split('=')[1]
                 if (buildType == 'platform') return await this.buildPlatform()
             }
-        });
+        }
     }
 
     async Obfuscate() {
@@ -67,9 +71,10 @@ class Index {
     async buildPlatform() {
         await this.Obfuscate();
         builder.build({
+            publish: this.publishOption,
             config: {
                 generateUpdatesFilesForAllChannels: false,
-                appId: preductname,
+                appId: "fr.smpblois.launcher",
                 productName: preductname,
                 copyright: 'Copyright © 2020-2025 Riptiaz',
                 artifactName: "${productName}-${os}-${arch}.${ext}",
@@ -101,25 +106,32 @@ class Index {
                     identity: null,
                     target: [{
                         target: "dmg",
-                        arch: "universal"
+                        arch: ["x64", "arm64"]
                     },
                     {
                         target: "zip",
-                        arch: "universal"
+                        arch: ["x64", "arm64"]
                     }]
                 },
                 linux: {
                     icon: "./app/assets/images/icon.png",
-                    target: [{
-                        target: "AppImage",
-                        arch: "x64"
-                    }]
+                    target: [
+                        {
+                            target: "AppImage",
+                            arch: "x64"
+                        },
+                        {
+                            target: "deb",
+                            arch: "x64"
+                        }
+                    ]
                 }
             }
         }).then(() => {
-            console.log('le build est terminé')
+            console.log('Le build est terminé avec succès')
         }).catch(err => {
-            console.error('Error during build!', err)
+            console.error('Erreur critique pendant le build !', err)
+            process.exit(1)
         })
     }
 

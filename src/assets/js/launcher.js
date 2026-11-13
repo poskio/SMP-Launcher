@@ -24,7 +24,7 @@ class Launcher {
     async init() {
         this.initLog();
         console.log("Initializing Launcher...");
-        if (process.platform === "win32") this.initFrame();
+        this.initFrame();
         this.config = await config.GetConfig();
         this.applyAccentColor();
         this.news = await config.GetNews();
